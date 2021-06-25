@@ -1,13 +1,12 @@
 import Task from './Task'
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
     
     return (
         //cannot use tasks.push() because state is immutable, use setTasks instead
-
         <>
         {tasks.map((task) => (
-            <Task key = {task.id} task ={task}/>
+            <Task key = {task.id} task ={task} onDelete={onDelete} onToggle={onToggle}/>
             ))} 
         </>
     )
